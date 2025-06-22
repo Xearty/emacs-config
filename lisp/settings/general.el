@@ -1,5 +1,3 @@
-(setq backup-directory-alist '((".*" . "~/.Trash")))
-
 (ido-mode t)
 (save-place-mode 1)
 (global-auto-revert-mode 1)
