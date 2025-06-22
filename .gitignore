@@ -54,3 +54,4 @@ flycheck_*.el
 /history
 /transient
 /ido.last
+/straight/
