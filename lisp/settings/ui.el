@@ -9,3 +9,6 @@
 (set-face-attribute 'default nil :family "JetBrains Mono" :height 110)
 
 (setq use-dialog-box nil)
+
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)
