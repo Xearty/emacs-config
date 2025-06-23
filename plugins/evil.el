@@ -5,7 +5,15 @@
 	evil-want-Y-yank-to-eol t)
   (setq evil-want-integration t  ;; These are needed for evil-collection
         evil-want-keybinding nil)
+
+  ;; dired keybindings
+  :bind (:map evil-normal-state-map
+	      ("-" . dired-jump))
   :config
+  ;; dired keybindings
+  (evil-define-key 'normal dired-mode-map (kbd "h") 'dired-jump)
+  (evil-define-key 'normal dired-mode-map (kbd "l") 'dired-find-file)
+
   (define-key evil-insert-state-map (kbd "C-h") 'backward-delete-char)
   (evil-set-undo-system 'undo-tree)
   (evil-mode 1))
