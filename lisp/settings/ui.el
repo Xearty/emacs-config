@@ -12,3 +12,6 @@
 
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
+
+(setq scroll-step 1)
+(setq scroll-margin 6)
