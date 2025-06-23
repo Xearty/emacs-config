@@ -57,3 +57,4 @@ flycheck_*.el
 /straight/
 /var/
 /etc/
+/tree-sitter/
