@@ -7,6 +7,7 @@
         evil-want-keybinding nil)
   :config
   (define-key evil-insert-state-map (kbd "C-h") 'backward-delete-char)
+  (evil-set-undo-system 'undo-tree)
   (evil-mode 1))
 
 (use-package evil-collection
@@ -18,3 +19,7 @@
   :after evil
   :config
   (evil-keypad-global-mode 1))
+
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
