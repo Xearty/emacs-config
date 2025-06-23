@@ -1,3 +1,5 @@
+(require 'libs/common) ; (vellum-common-kill-to-beginning-of-line)
+
 ;; Enable Vertico.
 (use-package vertico
   ;; :custom
@@ -28,3 +30,18 @@
   ;; Do not allow the cursor in the minibuffer prompt
   (minibuffer-prompt-properties
    '(read-only t cursor-intangible t face minibuffer-prompt)))
+
+;; Configure directory extension.
+(use-package vertico-directory
+  :after vertico
+  :straight nil
+  ;; More convenient directory navigation commands
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("C-h" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word)
+              ("C-w" . vertico-directory-delete-word)
+	      ("C-u" . vellum-common-kill-to-beginning-of-line))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
