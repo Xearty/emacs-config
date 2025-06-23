@@ -4,3 +4,5 @@
 (setq gc-cons-threshold 50000000)
 (setq large-file-warning-threshold 100000000)
 (setq global-auto-revert-non-file-buffers t)
+
+(setq read-file-name-completion-ignore-case t)
