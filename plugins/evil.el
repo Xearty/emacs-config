@@ -23,3 +23,7 @@
 (use-package undo-tree
   :config
   (global-undo-tree-mode))
+
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
