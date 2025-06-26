@@ -39,3 +39,21 @@
 (use-package evil-surround
   :config
   (global-evil-surround-mode 1))
+
+(defun vellum--with-underscore-as-word (original-function &rest args)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      (apply original-function args))))
+
+(with-eval-after-load 'evil
+  (let ((word-commands '(evil-inner-word
+			 evil-forward-word-begin
+			 evil-forward-word-end
+			 evil-a-word
+			 evil-backward-word-end
+			 evil-backward-word-begin
+			 evil-search-word-forward
+			 evil-search-word-backward)))
+    (dolist (command word-commands)
+      (advice-add command :around #'vellum--with-underscore-as-word))))
