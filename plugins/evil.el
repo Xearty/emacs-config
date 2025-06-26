@@ -14,6 +14,9 @@
   (evil-define-key 'normal dired-mode-map (kbd "h") 'dired-jump)
   (evil-define-key 'normal dired-mode-map (kbd "l") 'dired-find-file)
 
+  ;; magit
+  (add-hook 'git-commit-mode-hook 'evil-insert-state)
+
   (define-key evil-insert-state-map (kbd "C-h") 'backward-delete-char)
   (evil-set-undo-system 'undo-tree)
   (evil-mode 1))
