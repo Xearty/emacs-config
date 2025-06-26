@@ -29,6 +29,7 @@
 (use-package evil-keypad
   :after evil
   :config
+  (setq evil-keypad-activation-states '(normal visual))
   (evil-keypad-global-mode 1))
 
 (use-package undo-tree
