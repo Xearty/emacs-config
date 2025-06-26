@@ -6,3 +6,5 @@
 (setq global-auto-revert-non-file-buffers t)
 
 (setq read-file-name-completion-ignore-case t)
+
+(setq inhibit-startup-screen t)
