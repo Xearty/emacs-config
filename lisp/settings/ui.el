@@ -17,3 +17,7 @@
 (setq scroll-margin 6)
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+
+;; Do not extend `region' background past the end of the line.
+(custom-set-faces
+ '(region ((t :extend nil))))
