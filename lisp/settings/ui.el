@@ -15,3 +15,5 @@
 
 (setq scroll-step 1)
 (setq scroll-margin 6)
+
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
