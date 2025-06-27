@@ -8,3 +8,7 @@
 (setq read-file-name-completion-ignore-case t)
 
 (setq inhibit-startup-screen t)
+
+(add-hook 'prog-mode-hook (lambda ()
+			    (visual-line-mode -1)
+			    (toggle-truncate-lines 1)))
