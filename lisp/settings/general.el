@@ -12,3 +12,4 @@
 (add-hook 'prog-mode-hook (lambda ()
 			    (visual-line-mode -1)
 			    (toggle-truncate-lines 1)))
+(setq create-lockfiles nil)
