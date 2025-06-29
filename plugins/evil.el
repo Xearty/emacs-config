@@ -19,6 +19,11 @@
   (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
   (define-key evil-insert-state-map (kbd "C-h") 'backward-delete-char)
+
+  ;; commenting
+  (evil-define-key 'normal prog-mode-map (kbd "g c c") #'comment-line)
+  (evil-define-key 'visual prog-mode-map (kbd "g c") #'comment-or-uncomment-region)
+
   (evil-set-undo-system 'undo-tree)
   (evil-mode 1))
 
