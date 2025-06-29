@@ -109,5 +109,6 @@ calling `vellum-clean-load-theme`"
 
 (keymap-global-set "C-c t c" #'vellum-cycle-themes) ;; Cycle theme
 (keymap-global-set "C-c t v" #'vellum-change-theme-variant) ;; Change theme variant
+(keymap-global-set "C-c t s" #'vellum-change-theme) ;; Change theme
 
 (vellum-refresh-theme)
