@@ -13,6 +13,7 @@
   ;; dired keybindings
   (evil-define-key 'normal dired-mode-map (kbd "h") 'dired-jump)
   (evil-define-key 'normal dired-mode-map (kbd "l") 'dired-find-file)
+  (define-key evil-motion-state-map "K" nil) ;; Unbind (evil-lookup)
 
   ;; magit
   (add-hook 'git-commit-mode-hook 'evil-insert-state)
