@@ -53,13 +53,13 @@ Each entry is of the form (variant-name (theme1 theme2 ...))."
    (list (intern (completing-read "Load theme: " (custom-available-themes)))))
   (mapc #'disable-theme custom-enabled-themes)
   (load-theme theme t))
-(defun vellum-get-selected-theme-alist-entry ()
+(defun vellum-get-selected-theme-variant-alist-entry ()
   (assoc
    vellum-current-theme-variant
    vellum-themes-variants-alist))
 
 (defun vellum-get-selected-variant-themes-view ()
-  (cdr (vellum-get-selected-theme-alist-entry)))
+  (cdr (vellum-get-selected-theme-variant-alist-entry)))
 
 (defun vellum-get-selected-theme ()
   (let* ((current-variant-themes-view (vellum-get-selected-variant-themes-view))
