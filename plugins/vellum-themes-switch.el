@@ -90,6 +90,19 @@ calling `vellum-clean-load-theme`"
   (setq vellum-current-theme-variant variant)
   (vellum-refresh-theme))
 
+(defun vellum-change-theme (themes-view theme)
+  (interactive
+   (let ((view (vellum-get-selected-variant-themes-view)))
+     (list
+      view
+      (intern
+       (completing-read "Select theme: "
+			(themes-view-get-themes view))))))
+  (let* ((themes (themes-view-get-themes themes-view))
+	 (theme-index (cl-position theme themes)))
+    (oset themes-view index theme-index)
+    (vellum-refresh-theme)))
+
 (defun vellum-refresh-theme ()
   (let ((selected-theme (vellum-get-selected-theme)))
     (vellum-clean-load-theme selected-theme)))
